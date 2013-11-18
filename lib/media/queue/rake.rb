@@ -25,8 +25,8 @@ namespace :queue do
 
   desc "work queue"
   task work: :environment do
-    trap("INT")  { exit }
-    trap("TERM") { @worker.stop }
+    trap('INT')  { exit }
+    trap('TERM') { @worker.stop }
 
     @worker = Media::Worker.new
     @worker.start
